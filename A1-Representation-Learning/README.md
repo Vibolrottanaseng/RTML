@@ -3,7 +3,8 @@
 ## Overview
 This assignment focuses on representation learning for image classification using the CIFAR-10 dataset. The main objective is to implement, train, evaluate, and compare different deep learning architectures, including convolutional neural networks and Vision Transformers.
 
-The project includes training several models from scratch, such as AlexNet, GoogLeNet, ResNet-18, and ViT-Small. Each model is implemented in a separate file to keep the code organized. A main training script, ```run.py```, is used to select the model, train it on CIFAR-10, test saved weights, and save the best-performing model checkpoints.
+## Summmary
+The assignment includes training several models from scratch, such as AlexNet, GoogLeNet, ResNet-18, and ViT-Small. Each model is implemented in a separate file to keep the code organized. A main training script, ```run.py```, is used to select the model, train it on CIFAR-10, test saved weights, and save the best-performing model checkpoints.
 
 The assignment also explores the effect of architectural design choices. For AlexNet, the comparison includes training with and without Local Response Normalization. For GoogLeNet, the model uses Inception modules and auxiliary classifiers. ResNet-18 is used to demonstrate the benefit of residual connections, which help reduce the vanishing gradient problem and make deeper networks easier to train. ViT-Small introduces a transformer-based approach for image classification by splitting images into patches and using self-attention to learn visual representations.
 
