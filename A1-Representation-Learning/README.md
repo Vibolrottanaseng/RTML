@@ -1,6 +1,8 @@
 # A1: Representation Learning
 
-**Results:**
+## Overview
+
+## Results
 
 | Model | # Params | Test Accuracy | Time/epoch | Architecture Type |
 |---|---|---|---|---|
@@ -10,3 +12,5 @@
 | ResNet-18 (pretrained) | 11,181,642 | 91.76% | ~77s| CNN + Skip connections |
 | ViT-Small (from scratch) | 3,195,146 | 61.31% | ~33s | Transformer |
 | ViT-B/16 (pretrained, fine-tuned) | ? | ? | ? | Transformer |
+
+## Discussions
