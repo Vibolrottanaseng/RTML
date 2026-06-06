@@ -9,4 +9,4 @@ __pycache__/
 .env
 
 data/
-data/.gz
+data/**/*.tar.gz
