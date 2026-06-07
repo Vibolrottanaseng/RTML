@@ -37,6 +37,11 @@ python3 run.py --model resnet18 --dataset cifar10 --teset --weights resnet18_cif
 | ResNet-18 (from scratch) | 11,173,962 | 87.93% | ~22s | CNN + Skip connections |
 | ResNet-18 (pretrained) | 11,181,642 | 91.76% | ~77s| CNN + Skip connections |
 | ViT-Small (from scratch) | 3,195,146 | 61.31% | ~33s | Transformer |
-| ViT-B/16 (pretrained, fine-tuned) | ? | ? | ? | Transformer |
+| ViT-B/16 (pretrained, fine-tuned) | 85,806,346 | 93.2% | ~793 | Transformer |
 
 ## Discussions
+From the results, the best overall model is ViT-B/16 pretrained, which achieved 93.2% test accuracy. The second-best model is ResNet-18 pretrained, with 91.76% test accuracy. This shows that pretraining is very important. Models that were pretrained on a large dataset learned general visual features first, then fine-tuned those features for CIFAR-10. Among the models trained from scratch, ResNet-18 performed the best this shows that residual connections are very effective because they help gradients flow through deeper networks and make training more stable. GoogLeNet its Inception modules help the model learn features at different scales, which makes it more efficient than AlexNet. AlexNet shows that larger parameter doesn't always make better performance. 
+
+## CNN VS. Transformer
+
+CNNs have useful built-in assumptions for images, such as local feature extraction and spatial structure. They can learn well even from smaller datasets like CIFAR-10. Transformers behave differently. ViT-Small trained from scratch performed poorly, even though it trained reasonably fast and had few parameters. This suggests that Vision Transformers usually need more data or stronger pretraining to learn good visual representations. However, when pretrained, the Transformer became the best model. ViT-B/16 pretrained achieved 93.2% accuracy, higher than pretrained ResNet-18. This shows that Transformers can be very powerful when they are pretrained on large datasets. However, transformer always need large computational resources. 
