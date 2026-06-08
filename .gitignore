@@ -11,3 +11,6 @@ __pycache__/
 data/
 data/*.tar.gz
 data/**/*.tar.gz
+
+weights/*.weights
+checkpoints/*.pt
