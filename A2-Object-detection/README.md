@@ -64,14 +64,14 @@ python3 run.py --model unet_resnet18 --weights unet_resnet18_pet.pt --dataset ox
 
 ```
 
-**Results**
+## Results
 
 | Model | Encoder | Skip connections | Val mIoU | Time/epoch |
 |---|---|---|---|---|
 | `unet_resnet18` | ResNet-18 (ImageNet) | ✅ | 0.7570 | ~20 |
 | `unet_resnet18_no_skip` | ResNet-18 (ImageNet) | ❌ | 0.6875 | ~22 |
 
-**Discussion**
+## Discussion
 
 Skip connections improved the segmentation performance because they allow the decoder to recover fine spatial details from the encoder. This is especially important in image segmentation because the model must classify every pixel, including object boundaries. Without skip connections, the decoder relies mostly on compressed low-resolution features, so the predicted masks can become blurry or less accurate.
 
