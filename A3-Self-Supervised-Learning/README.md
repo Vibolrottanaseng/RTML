@@ -10,8 +10,21 @@ In this assignment, two self-supervised learning methods are studied: DINO and M
 The assignment consist of ablation studies to analyze the effect of important design choices. For DINO, the experiments compare the default setting, a version without centering, and a version without local crops. These experiments help show how centering and multi-crop augmentation affect representation learning. For MAE, different mask ratios are tested to observe how the amount of hidden image information affects reconstruction quality and downstream classification performance.
 
 The learned representations are evaluated using linear evaluation accuracy, training loss curves, and visualizations. 
+## DINO Variants
+| Setting | Linear Eval Accuracy |
+   |---|---|
+   | Default (2 global + 4 local, with centering) | 69.14% |
+   | No centering (`- self.center` removed) | 37.19% |
+   | No local crops (`n_local=0`) | 62.82% |
 
-## Reslts
+## MAE 3 Masking
+| Mask Ratio | Recon Loss | Linear Eval Acc |
+   |---|---|---|
+   | 0.25 |  45.63% | 11.8s |
+   | 0.50 | 42.83%  | 11.9s |
+   | 0.75 | 45.63%  | 12.1s |
+
+## Overall Results
 | Model | Linear Eval Acc | Time/epoch | Notes |
 |---|---|---|---|
 | DINO (Default) | 69.14% | 139.6s | (2 global + 4 local, with centering)  |
