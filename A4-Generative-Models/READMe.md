@@ -27,6 +27,7 @@ The project is organized into separate modules for model architectures, dataset 
 #DDPM with cosine schedule
 !python run.py \ --model ddpm \ --dataset mnist \ --epochs 10 \ --batch-size 128 \ --schedule cosine \ --train
 ```
+I train on google colab using A100 GPU.
 
 ## Results Table
 | Model | Dataset | Visual Quality | Training Time | Notes |
