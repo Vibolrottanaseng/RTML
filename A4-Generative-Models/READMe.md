@@ -35,7 +35,7 @@ I train on google colab using A100 GPU.
 | Vanilla GAN | MNIST | 3/5 | ~7s | mode collapse check lr_D=6e-4|
 | CycleGAN | CelebA | 4/5 | ~34.3s | dark↔blonde 50K/domain|
 | DDPM (linear) | MNIST | 3/5 | ~6.6s | baseline, Generated digits are recognizable |
-| DDPM (cosine) | MNIST | 4/5 | ~6.6 | better visual quality than the linear schedule, with clearer and more recognizable digits |
+| DDPM (cosine) | MNIST | 4/5 | ~6.6s | better visual quality than the linear schedule, with clearer and more recognizable digits |
 
 I would use a GAN when fast generation is important and the target domain is relatively simple, but I would monitor carefully for unstable training and mode collapse. I would use CycleGAN for unpaired image-to-image translation, such as changing hair colour or converting one visual style into another, especially when paired examples are unavailable. I would use a diffusion model when image quality, diversity, and training stability are more important than generation speed. Based on these experiments, diffusion is the strongest choice for high-quality synthesis, while GANs are faster and CycleGAN is best suited to domain translation.
 
